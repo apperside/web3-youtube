@@ -1,6 +1,7 @@
 import { Router } from "next/router";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function Landing() {
   const router = useRouter();
@@ -24,7 +25,7 @@ function Landing() {
       // At last save the user's wallet address in browser's local storage
       localStorage.setItem("walletAddress", accounts[0]);
 
-      router.push("/home")
+      router.push("/home");
     } catch (error) {
       console.log(error);
     }
@@ -55,6 +56,26 @@ function Landing() {
                   A YouTube Clone built on top of Polygon network, allow users
                   to create, share and watch videos, without worrying about
                   their privacy.
+                </p>
+                <b>
+                  <p
+                    className=" text-amber-500 my-3 text-underlined"
+                    data-aos="zoom-y-out"
+                    data-aos-delay="150"
+                  >
+                    ACTUALLY WORKING ON POLIGON TESTNET (MUMBAY NETWORK)
+                  </p>
+                </b>
+                <p className="text-amber-500 my-3 underline">
+                  <Link
+                  target={"_blank"}
+                    href={
+                      "https://blog.suhailkakar.com/building-a-full-stack-web3-youtube-clone-with-next-ipfs-the-graph-solidity-and-polygon#heading-deploying-smart-contract-on-polygon"
+                    }
+                  >
+                    Click here to read how to to add mumbai test network on
+                    metamask
+                  </Link>
                 </p>
                 <button
                   className="items-center  bg-white rounded-full font-medium color-green p-4 shadow-lg"
