@@ -1,6 +1,9 @@
+import { Router } from "next/router";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 function Landing() {
+  const router = useRouter();
   // Creating a function to connect user's wallet
   const connectWallet = async () => {
     try {
@@ -20,6 +23,8 @@ function Landing() {
 
       // At last save the user's wallet address in browser's local storage
       localStorage.setItem("walletAddress", accounts[0]);
+
+      router.push("/home")
     } catch (error) {
       console.log(error);
     }
@@ -28,7 +33,7 @@ function Landing() {
   return (
     <>
       {/* Creating a hero component with black background and centering everything in the screen */}
-      <section  className="dark relative bg-black flex flex-col h-screen justify-center items-center">
+      <section className="dark relative bg-black flex flex-col h-screen justify-center items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="pt-32 pb-12 md:pt-40 md:pb-20">
             <div className="text-center pb-12 md:pb-16">
@@ -52,13 +57,15 @@ function Landing() {
                   their privacy.
                 </p>
                 <button
-                  className="items-center  bg-white rounded-full font-medium  p-4 shadow-lg"
+                  className="items-center  bg-white rounded-full font-medium color-green p-4 shadow-lg"
                   onClick={() => {
                     // Calling the connectWallet function when user clicks on the button
                     connectWallet();
                   }}
                 >
-                  <span>Connect wallet</span>
+                  <span className="text-white dark:text-black">
+                    Connect wallet
+                  </span>
                 </button>
               </div>
             </div>

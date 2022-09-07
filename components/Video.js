@@ -7,8 +7,8 @@ export default function Video({ horizontal, video }) {
     <div
       className={`${
         horizontal
-          ? "flex flex-row mx-5 mb-5  item-center justify-center"
-          : "flex flex-col m-5"
+          ? "flex flex-row mx-5 mb-5  item-center justify-center cursor-pointer"
+          : "flex flex-col m-5 cursor-pointer"
       } `}
     >
       <img
