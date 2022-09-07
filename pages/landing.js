@@ -63,7 +63,7 @@ function Landing() {
                     data-aos="zoom-y-out"
                     data-aos-delay="150"
                   >
-                    ACTUALLY WORKING ON POLIGON TESTNET (MUMBAY NETWORK)
+                    ACTUALLY WORKING ON POLYGON TESTNET (MUMBAY NETWORK)
                   </p>
                 </b>
                 <p className="text-amber-500 my-3 underline">
