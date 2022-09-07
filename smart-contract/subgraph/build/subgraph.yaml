@@ -1,0 +1,23 @@
+specVersion: 0.0.4
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: ProvaYoutube
+    network: mumbai
+    source:
+      address: "0x9b4EC0c57FcE6849E19F2cD1Ee8674E9E972efcD"
+      abi: ProvaYoutube
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - VideoUploaded
+      abis:
+        - name: ProvaYoutube
+          file: ProvaYoutube/abis/ProvaYoutube.json
+      eventHandlers:
+        - event: VideoUploaded(uint256,string,string,string,string,string,string,string,address)
+          handler: handleVideoUploaded
+      file: ProvaYoutube/ProvaYoutube.wasm
